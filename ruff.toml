@@ -1,0 +1,78 @@
+select = [
+    # Enable flake8-comprehensions rules
+    "C",
+    # Enable pydocstyle rules
+    "D",
+    # Enable pycodestyle errors/warning rules
+    "E",
+    "W",
+    # Enable pyflakes rules
+    "F",
+    # Enable isort rules
+    "I",
+    # Enable pandas-vet rules
+    "PD",
+    # Enable perflint rules
+    "PERF",
+    # Enable pylint rules
+    "PL",
+    # Enable ruff-specific rules
+    "RUF",
+    # Enable pyupgrade rules
+    "UP",
+]
+ignore = [
+    # Do not mandate docstrings
+    "D100",
+    "D101",
+    "D102",
+    "D103",
+    "D104",
+    "D105",
+    "D106",
+    "D107",
+    # Disable some rules that are mutually exclusive with others
+    "D203",
+    "D212",
+    # Allow f-strings without any placeholders (this can be considered a stylistic choice)
+    "F541",
+    # Let black handle line length checking
+    "E501",
+]
+# Allow fix for all enabled rules (when `--fix`) is provided.
+fixable = ["ALL"]
+unfixable = []
+# Exclude a variety of commonly ignored directories.
+exclude = [
+    ".bzr",
+    ".direnv",
+    ".eggs",
+    ".git",
+    ".git-rewrite",
+    ".hg",
+    ".mypy_cache",
+    ".nox",
+    ".pants.d",
+    ".pytype",
+    ".ruff_cache",
+    ".svn",
+    ".tox",
+    ".venv",
+    "__pypackages__",
+    "_build",
+    "buck-out",
+    "build",
+    "dist",
+    "node_modules",
+    "venv",
+]
+# Allow unused variables when underscore-prefixed.
+dummy-variable-rgx = "^(_+|(_+[a-zA-Z0-9_]*[a-zA-Z0-9]+?))$"
+# Assume Python 3.10
+target-version = "py310"
+line-length = 100
+
+[per-file-ignores]
+# Allow unused imports in __init__.py files
+# These are run when the containing package is imported and so it's ok for them to be unused in the package itself
+"__init__.py" = ["F401"]
